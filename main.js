@@ -1,4 +1,26 @@
 //Sistema de Calculo del valor de paquetes
+
+//Arrays con los datos 
+const listCity = ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollague", "San Pedro de Atacama", "Tocopilla", "Maria Elena"];
+
+//DEFINICIÓN DE CLASES
+class Tramo{  
+  constructor(origen, destino){
+    this.origen = origen;
+    this.destino = destino;
+  }
+  //Valida que el origen o destino sean iguales
+  validateEqualTramo() { return this.origen === this.destino ;} 
+  //Existe el elemento en el array
+  isExistTramo(element){
+    return listCity.find(e => e === element);
+  }
+  //Metodo que entrega el valor del tramo - Aplicar logica, 
+  getValueTramo(){
+    return Math.floor(Math.random()*1000);
+  }
+}
+//*********PROGRAMA*****************
 let opcion = parseInt(MsgMenu());
 let valor,cantPck = 0;
 while(opcion != 3){
@@ -6,22 +28,27 @@ while(opcion != 3){
     case 1: 
       let origen = MsgOrigen();
       let destino = MsgDestino();
-      //Definir varios tramos y Validar origen y destinos igual 
-      if((origen == 'Calama' && destino == "Antofagasta") || (origen == 'Antofagasta' && destino == "Calama")){
-        valor = 400;
-        //Ahora calcular el valor por las dimesiones del paquete
-        cantPck = parseInt(MsgPackage());
-        valor = valor + parseInt(CalcularMontoTransporte(cantPck));
+      const tramo = new Tramo(origen,destino);
+      if(tramo.validateEqualTramo()){
+        alert("Son iguales");
       }else{
-        alert("No existe Valores para esos tramos")
-      }    
+        if(tramo.isExistTramo(origen) === undefined || tramo.isExistTramo(destino) === undefined){
+          alert("No existe el tramo, favor revisar opcion 2");
+        }else{
+          //Ahora calcular el valor por las dimesiones del paquete
+          valor = tramo.getValueTramo()
+          cantPck = parseInt(MsgPackage());
+          valor = valor + parseInt(CalcularMontoTransporte(cantPck));
+          alert(`El Valor del viaje es ${valor} para los ${cantPck} Paquetes`);
+        }
+      }
       break;
-    case 2: 
-      //A modo de ejemplo se utilizara se usara un array
+    case 2:
+      //Manejos de arrays
+      listCity.sort(); // Ordeno
+      alert(listCity.join(' - '));//Concadenar los elementos
       break;
-  }
-  let msgFinal = `El Valor del viaje es ${valor} para los ${cantPck} Paquetes`;
-  alert(msgFinal);
+  } 
   opcion = parseInt(MsgMenu());
 }
 
@@ -34,12 +61,12 @@ function MsgMenu(){
 
 //Ingresar Destinos y Origen 
 function MsgOrigen(){
-  var origen = prompt("*************\n Escriba el Origen \n 1°- Calama \n 2°- Antofagasta \n  *************");
+  var origen = prompt("*************\n Escriba el Origen \n*************");
   return origen;
 }
 
 function MsgDestino(){
-  var destino = prompt("*************\n Escriba el Destino \n 1°- Calama \n 2°- Antofagasta \n  *************");
+  var destino = prompt("*************\n Escriba el Destino \n*************");
   return destino;
 }
 
@@ -63,6 +90,3 @@ function CalcularMontoTransporte(cantPck){
   }
   return MontoTotal;
 }
-
-
-
