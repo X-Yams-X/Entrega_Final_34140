@@ -1,2 +1,4 @@
-# Primera_Entrega_34140
-Semilla para la primera entrega del curso de Javascript
+# Segundo_Entrega_34140
+Se agregan lo siguiente al proyecto
+-Clases
+-Utilización de Array, con sus funciones
