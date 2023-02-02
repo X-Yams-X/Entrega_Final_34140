@@ -1,5 +1,5 @@
 //Exportamos el data del json;
-import datajson from './data.json' assert { type: 'json' }; 
+import datajson from '../data.json' assert { type: 'json' }; 
 
 //Arrays con los datos 
 //const listCity = ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollague", "San Pedro de Atacama", "Tocopilla", "Maria Elena"];
@@ -112,3 +112,5 @@ function CalcularMontoTransporte(countPackage){
   }
   return MontoTotal;
 }
+
+

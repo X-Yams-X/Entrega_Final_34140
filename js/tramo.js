@@ -1,4 +1,4 @@
-import datajson from './data.json' assert { type: 'json' };
+import datajson from '../data.json' assert { type: 'json' };
 
 class Tramo {
     constructor(origen, destino) {

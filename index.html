@@ -45,15 +45,32 @@
                                     <option selected>Seleccione el Destino</option>
                                 </select>
                             </div>
-                            <button id="btnCalcular" type="button"
-                                class="w-100 btn btn-lg btn-outline-primary">Calcular</button>
+                            <div class="mb-3">
+                                <label for="txtCountPackage" class="form-label">Cantidad de Paquete</label>
+                                <input type="number" class="form-control" id="txtCountPackage" placeholder="Ingrese Cantidad de Paquetes" value="1" disabled>
+                            </div>
+                            <button id="btnInsertPackage" type="button"
+                                class="w-100 btn btn-lg btn-outline-primary">Ingresar Dimensiones</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <section id="containerPrincipal" style="display: none;"> 
+                <div class="row row-cols-1 row-cols-md-3 mb-3 justify-content-md-center" >
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header py-3 text-center">
+                                <h4 class="my-0 fw-normal">Ingresar Dimensiones</h4>
+                            </div>
+                            <div class="card-body" id="containerPaquete">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
-    <script type="module" src="main2.js"></script>
+    <script type="module" src="./js/main_update.js"></script>
 </body>
 
 </html>
