@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Antofagasta",
+      "distanceValue": 2131
+    },
+    {
+      "name": "Mejillones",
+      "distanceValue": 32132
+    },
+    {
+      "name": "Sierra Gorda",
+      "distanceValue": 32133
+    },
+    {
+      "name": "Taltal",
+      "distanceValue": 32134
+    },
+    {
+      "name": "Calama",
+      "distanceValue": 32231
+    },
+    {
+      "name": "Ollagüe",
+      "distanceValue": 32232
+    },
+    {
+      "name": "San Pedro de Atacama",
+      "distanceValue": 32233
+    },
+    {
+      "name": "Tocopilla",
+      "distanceValue": 32331
+    },
+    {
+      "name": "María Elena",
+      "distanceValue": 32332
+    }
+  ]
