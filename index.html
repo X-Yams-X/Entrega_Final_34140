@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Primera Entrega</title>
+    <title>Entrega Final</title>
 </head>
 
 <body>
@@ -15,61 +15,64 @@
         <header>
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                    <span class="fs-4">Tercera Entrega</span>
+                    <span class="fs-4">Entrega Final</span>
                 </a>
             </div>
-
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-4 fw-normal">Sistema de Calculo de Envio</h1>
-                <p class="fs-5 text-muted">Sistema que ayuda a calcular cuanto costara enviar paquetes a distintas
-                    partes de la II región de Chile</p>
+                <h1 class="display-4 fw-normal">Sistema de Calcula de viaje de BUS</h1>
+                <p class="fs-5 text-muted">Sistema que ayuda a calcular pasajes de Bus de la II región de Chile</p>
             </div>
         </header>
         <main>
-            <div class="row row-cols-1 row-cols-md-3 mb-3 justify-content-md-center">
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3 text-center">
-                            <h4 class="my-0 fw-normal">Calculadora</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label for="txtOrigen" class="form-label">Origen</label>
-                                <select class="form-select" id="SelectOrigen" aria-label="Default select example">
-                                    <option selected>Seleccione el Origen</option>                                   
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="txtDestino" class="form-label">Destino</label>
-                                <select class="form-select" id="SelectDestino" aria-label="Default select example">
-                                    <option selected>Seleccione el Destino</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="txtCountPackage" class="form-label">Cantidad de Paquete</label>
-                                <input type="number" class="form-control" id="txtCountPackage" placeholder="Ingrese Cantidad de Paquetes" value="1" disabled>
-                            </div>
-                            <button id="btnInsertPackage" type="button"
-                                class="w-100 btn btn-lg btn-outline-primary">Ingresar Dimensiones</button>
-                        </div>
-                    </div>
+            <!-- TODO: container que guarda toda la info en storage web -->
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom">Historial</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5" id="containerCard">
+
                 </div>
             </div>
-            <section id="containerPrincipal" style="display: none;"> 
-                <div class="row row-cols-1 row-cols-md-3 mb-3 justify-content-md-center" >
+                <br><br>
+                <div class="row row-cols-1 row-cols-md-3 mb-3 justify-content-md-center">
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div class="card-header py-3 text-center">
-                                <h4 class="my-0 fw-normal">Ingresar Dimensiones</h4>
+                                <h4 class="my-0 fw-normal">Viaje</h4>
                             </div>
-                            <div class="card-body" id="containerPaquete">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="txtOrigen" class="form-label">Origen</label>
+                                    <select class="form-select" id="SelectOrigen" aria-label="Default select example">
+                                        <option selected>Seleccione el Origen</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="txtDestino" class="form-label">Destino</label>
+                                    <select class="form-select" id="SelectDestino" aria-label="Default select example">
+                                        <option selected>Seleccione el Destino</option>
+                                    </select>
+                                </div>
+                                <button id="btnCalcularViaje" type="button"
+                                    class="w-100 btn btn-lg btn-outline-primary">Calcular Viaje</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+                <section id="containerPrincipal" style="display: none;">
+                    <div class="row row-cols-1 row-cols-md-3 mb-3 justify-content-md-center">
+                        <div class="col">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-3 text-center">
+                                    <h4 class="my-0 fw-normal">Ingresar Dimensiones</h4>
+                                </div>
+                                <div class="card-body" id="containerPaquete">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./js/main_update.js"></script>
 </body>
 
